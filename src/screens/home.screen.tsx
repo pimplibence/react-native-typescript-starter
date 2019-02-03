@@ -2,16 +2,16 @@ import * as React from 'react';
 import { Text, View, ViewStyle } from 'react-native';
 
 const style: ViewStyle = {
-    width: '100%',
+    alignItems: 'center',
     height: '100%',
     justifyContent: 'center',
-    alignItems: 'center'
+    width: '100%'
 };
 
 export class HomeScreen extends React.Component<any> {
-    render(): React.ReactNode {
+    public render(): React.ReactNode {
         return <View style={style}>
             <Text>Hello HomeScreen</Text>
-        </View>
+        </View>;
     }
 }

@@ -5,12 +5,16 @@
     "react": "^16.7.0",
     "react-native": "^0.57.8",
     "react-native-typescript-transformer": "^1.2.11",
+    "tslint": "^5.12.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.2.4"
   },
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
-    "ios": "react-native run-ios"
+    "ios": "react-native run-ios",
+    "lint": "tslint --project ."
   },
   "rnpm": {
     "assets": [
