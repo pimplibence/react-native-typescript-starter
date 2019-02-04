@@ -16,6 +16,7 @@
       240
     ],
     "jsx-wrap-multiline": false,
+    "no-increment-decrement": false,
     "trailing-comma": false,
     "align": false,
     "indent": [
@@ -25,7 +26,10 @@
     ],
     "ter-indent": [
       true,
-      4
+      4,
+      {
+        "SwitchCase": 1
+      }
     ]
   }
 }
