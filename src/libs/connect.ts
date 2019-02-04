@@ -8,6 +8,6 @@ type MapDispatchProps = (dispatch: (action: any) => void) => {
     [key: string]: ((...args: any) => void) | (() => void),
 };
 
-export const connect = (mapStateProps: MapStateProps, mapDispatchProps?: MapDispatchProps, mergeProps?: any): any => {
+export const connect = (mapStateProps?: MapStateProps, mapDispatchProps?: MapDispatchProps, mergeProps?: any): any => {
     return _connect(mapStateProps, mapDispatchProps, mergeProps || null, { shouldHandleStateChanges: false });
 };
