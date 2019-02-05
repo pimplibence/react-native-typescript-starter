@@ -16,9 +16,12 @@
       240
     ],
     "jsx-wrap-multiline": false,
+    "ter-arrow-parens": false,
     "no-increment-decrement": false,
     "trailing-comma": false,
     "align": false,
+    "jsx-no-lambda": false,
+    "jsx-no-bind": true,
     "indent": [
       true,
       "spaces",

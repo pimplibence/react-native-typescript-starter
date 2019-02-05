@@ -1,10 +1,11 @@
 import { connect as _connect } from 'react-redux';
+import { Action } from 'redux';
 
 type MapStateProps = (state: any) => {
     [key: string]: any,
 };
 
-type MapDispatchProps = (dispatch: (action: any) => void) => {
+type MapDispatchProps = (dispatch: (action: Action<any>) => void) => {
     [key: string]: ((...args: any) => void) | (() => void),
 };
 
