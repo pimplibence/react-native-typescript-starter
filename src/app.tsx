@@ -1,12 +1,28 @@
 import * as React from 'react';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import reduxLogger from 'redux-logger';
-import { counterReducer } from './reducers/counter.reducer';
+import { userReducer } from './reducers/user.reducer';
 import { HomeScreen } from './screens/home.screen';
+import { ProfileScreen } from './screens/profile.screen';
+
+// NAVIGATION
+
+const navigation = createStackNavigator({
+    home: HomeScreen,
+    profile: ProfileScreen
+}, {
+    headerMode: 'none',
+    initialRouteName: 'home'
+});
+
+const appContainer = createAppContainer(navigation);
+
+// REDUX / STORE
 
 const reducers = {
-    counter: counterReducer
+    user: userReducer
 };
 
 const store = createStore(
@@ -19,7 +35,7 @@ const store = createStore(
 export class App extends React.Component<any> {
     public render(): React.ReactNode {
         return <Provider store={store}>
-            <HomeScreen/>
+            {React.createElement(appContainer)}
         </Provider>;
     }
 }
