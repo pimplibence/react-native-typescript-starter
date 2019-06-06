@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { Animated, Easing } from 'react-native';
+import { createNavigationContainer, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import reduxLogger from 'redux-logger';
@@ -10,14 +11,28 @@ import { ProfileScreen } from './screens/profile.screen';
 // NAVIGATION
 
 const navigation = createStackNavigator({
-    home: HomeScreen,
-    profile: ProfileScreen
+    home: {
+        path: 'home',
+        screen: HomeScreen
+    },
+    profile: {
+        path: 'profile',
+        screen: ProfileScreen
+    }
 }, {
     headerMode: 'none',
-    initialRouteName: 'home'
+    initialRouteName: 'home',
+    transitionConfig: () => ({
+        transitionSpec: {
+            duration: 3000,
+            easing: Easing.back(1),
+            timing: Animated.timing,
+            useNativeDriver: true,
+        },
+    })
 });
 
-const appContainer = createAppContainer(navigation);
+const appContainer = createNavigationContainer(navigation);
 
 // REDUX / STORE
 

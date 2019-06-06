@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, TextInput, View } from 'react-native';
 import { AnyAction } from 'redux';
 import { connect } from '../libs/connect';
 
@@ -12,6 +12,12 @@ export class ProfileScreen extends React.Component<any> {
     public render(): React.ReactNode {
         return <View>
             <Text>ProfileScreen</Text>
+            <Text>ProfileScreen</Text>
+            <Text>ProfileScreen</Text>
+            <Text>ProfileScreen</Text>
+            <Text>ProfileScreen</Text>
+            <Text>ProfileScreen</Text>
+            <Button onPress={() => this.props.navigation.navigate('home')} title="To Home"/>
         </View>;
     }
 }
