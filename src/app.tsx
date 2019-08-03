@@ -24,7 +24,7 @@ const navigation = createStackNavigator({
     initialRouteName: 'home',
     transitionConfig: () => ({
         transitionSpec: {
-            duration: 3000,
+            duration: 1000,
             easing: Easing.back(1),
             timing: Animated.timing,
             useNativeDriver: true,
