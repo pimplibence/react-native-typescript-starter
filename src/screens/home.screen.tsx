@@ -1,32 +1,27 @@
 import * as React from 'react';
 import { Button, Text, View } from 'react-native';
-import { AnyAction } from 'redux';
+import { CounterActions } from '../actions/counter.actions';
 import { connect } from '../libs/connect';
-import { Field } from '../libs/form/field';
-import { Form } from '../libs/form/form';
 
-const mapStateprops = (store) => ({});
-const mapDispatchProps = (dispatch: (action: AnyAction) => void) => ({});
+const mapStateProps = (store: any) => ({
+    counter: store.counter
+});
 
-@connect(mapStateprops, mapDispatchProps)
+const mapDispatchProps = (dispatch: any) => ({
+    setCounter: (value: number) => dispatch(CounterActions.set(value)),
+    incrementCounter: () => dispatch(CounterActions.increment()),
+    decrementCounter: () => dispatch(CounterActions.decrement()),
+});
+
+@connect(mapStateProps, mapDispatchProps)
 export class HomeScreen extends React.Component<any> {
-    public form = new Form({
-        example: new Field({
-            placeholder: 'ExamplePlaceholder',
-            value: ''
-        })
-    });
-
     public render(): React.ReactNode {
         return <View>
-            <Text>HomeScreen</Text>
-            <Text>HomeScreen</Text>
-            <Text>HomeScreen</Text>
-            <Text>HomeScreen</Text>
-            <Text>HomeScreen</Text>
-            <Text>HomeScreen</Text>
-            <Text>HomeScreen</Text>
-            <Button onPress={() => this.props.navigation.navigate('profile')} title="To Profile"/>
+            <Text>HomeScreen {this.props.counter.value}</Text>
+
+            <Button onPress={() => this.props.setCounter(124)} title="Set 124"/>
+            <Button onPress={() => this.props.incrementCounter()} title="+"/>
+            <Button onPress={() => this.props.decrementCounter()} title="-"/>
         </View>;
     }
 }

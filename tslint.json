@@ -15,6 +15,7 @@
       true,
       240
     ],
+    "no-parameter-reassignment": false,
     "no-submodule-imports": false,
     "no-var-requires": false,
     "object-literal-sort-keys": false,
