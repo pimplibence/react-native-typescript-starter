@@ -14,15 +14,12 @@ const mapDispatchProps = (dispatch: any) => ({
 });
 
 @connect(mapStateProps, mapDispatchProps)
-export class HomeScreen extends React.Component<any> {
+export class RegistrationScreen extends React.Component<any> {
     public render(): React.ReactNode {
         return <View>
-            <Text>HomeScreen</Text>
-            <Text>{this.props.counter.value}</Text>
+            <Text>RegistrationScreen</Text>
 
-            <Button onPress={() => this.props.setCounter(124)} title="Set 124"/>
-            <Button onPress={() => this.props.incrementCounter()} title="+"/>
-            <Button onPress={() => this.props.decrementCounter()} title="-"/>
+            <Button title="To Login" onPress={() => this.props.navigation.navigate({ routeName: 'login' })}/>
         </View>;
     }
 }
